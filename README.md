@@ -23,10 +23,10 @@ Project Plan Phase 1 Capstone
 
 - To start work on each page individually
 
-  - Home page should view a fecth request for all products in Api
+  - GetAllProduct page should view a fecth request for all products in Api
   - Do small styling for page to look presentable
-  - Create the home page component and render products
-  - Your home page can be a template guide for you and the site.
+  - Create the GetAllProduct page component and render products
+  - Your GetAllProduct page can be a template guide for you and the site.
 
 - Ex. Template
   Import react from "react"
