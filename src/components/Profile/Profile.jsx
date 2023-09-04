@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 
-const Cart = () => {
-  return <h1>Cart</h1>;
+const Profile = () => {
+  return <h1>Profile</h1>;
 };
 
-export default Cart;
+export default Profile;

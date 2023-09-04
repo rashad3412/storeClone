@@ -1,9 +1,5 @@
-/* .product-display {
+.product-display {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-} */
-
-/* .img {
-  text-align: center;
-} */
+}

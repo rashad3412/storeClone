@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 
-const Home = () => {
+const Products = () => {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
@@ -21,17 +21,14 @@ const Home = () => {
 
   return (
     <div>
-      <div>
-        <h1> NavBar</h1>
-      </div>
-
+      <h1>Product Page</h1>
       {product.map((product) => (
         <div key={product.id}>
           <div className="product-display">
             <div>
               {product.title}
               <div className="img">
-                <img src={product.image} width={"200"} height={"300"}></img>
+                <img src={product.image} width={"100"} height={"200"}></img>
                 <div>{product.price}</div>
               </div>
             </div>
@@ -42,4 +39,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Products;
