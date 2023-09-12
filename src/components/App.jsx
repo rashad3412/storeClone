@@ -8,6 +8,8 @@ import Home from "./Home/Home";
 import Profile from "./Profile/Profile";
 import Cart from "./Cart/Cart";
 import Login from "./Login/Login";
+import SingleProduct from "./Products/SingleProduct";
+import SingleCategory from "./Products/SingleCategory";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
@@ -24,6 +26,8 @@ const App = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/products/:id" element={<SingleProduct />} />
+            <Route path="/products/:category" element={<SingleCategory />} />
           </Routes>
         </div>
       </div>
