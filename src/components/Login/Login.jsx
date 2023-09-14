@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 
-/**
- * LOG-IN USER
- * @param {*} username
- * @param {*} password
- * @returns user object
- */
+// /**
+//  * LOG-IN USER
+//  * @param {*} username
+//  * @param {*} password
+//  * @returns user object
+//  */
 
 const LoginUser = async (username, password) => {
   try {
@@ -16,16 +16,14 @@ const LoginUser = async (username, password) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user: {
-          username,
-          password,
-        },
+        username,
+        password,
       }),
     });
     const result = await response.json();
     return "result", result;
   } catch (err) {
-    console.error(err);
+    console.error("Trouble Signing in");
   }
 };
 

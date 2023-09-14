@@ -1,5 +1,6 @@
 .product-display {
   display: flex;
-  flex-direction: column;
+  width: 200px;
+  flex-direction: row;
   flex-wrap: wrap;
 }
