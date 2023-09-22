@@ -45,26 +45,25 @@ const Products = () => {
       </div>
 
       <button onClick={handleSortOrder}>Sort Order</button>
-      {product.map((product) => (
-        <div key={product.id}>
-          <div className="new-format">
-            <div className="product-display">
-              {product.title}
-              <div className="img">
-                <img src={product.image} width={"100"} height={"200"}></img>
-                <div>{product.price}</div>
-                {/* <div>{product.description}</div> */}
-                <button onClick={() => handleButtonClick(product.id)}>
-                  Details
-                </button>
-                <button onClick={() => handleButtonClick(product.id)}>
-                  Add To Cart
-                </button>
-              </div>
+      <div className="product-display">
+        {product.map((product) => (
+          <div className="card" key={product.id}>
+            <img src={product.image} width={"100"} height={"200"}></img>
+            <div>
+              <h6>{product.title}</h6>
+              <h6>{`Price: $${product.price}`}</h6>
+              <h5>{`Category: ${product.category}`}</h5>
+
+              <button onClick={() => handleButtonClick(product.id)}>
+                Details
+              </button>
+              <button onClick={() => handleButtonClick(product.id)}>
+                Add To Cart
+              </button>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,0 +1,47 @@
+.auth-form {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login-inputs {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #cecece;
+  margin: 10px 0;
+}
+
+.format-button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+.center-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+small {
+  color: red;
+  text-align: center;
+}

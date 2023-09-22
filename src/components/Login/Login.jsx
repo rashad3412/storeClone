@@ -21,7 +21,8 @@ const LoginUser = async (username, password) => {
       }),
     });
     const result = await response.json();
-    return "result", result;
+    console.log(result);
+    return result;
   } catch (err) {
     console.error("Trouble Signing in");
   }

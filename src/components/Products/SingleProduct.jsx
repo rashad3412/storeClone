@@ -22,9 +22,9 @@ const SingleProduct = () => {
   }, [params.id]);
   return (
     <div>
-      <p>{singleProduct?.title}</p>
+      <h3>{singleProduct?.title}</h3>
       <img src={singleProduct?.image} width={"100"} height={"200"}></img>
-      <p>{singleProduct?.category}</p>
+      <p>{singleProduct?.description}</p>
     </div>
   );
 };

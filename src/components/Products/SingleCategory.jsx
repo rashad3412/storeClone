@@ -21,6 +21,7 @@ const SingleCategory = () => {
     };
     singleContainer();
   }, []);
+
   return (
     <div>
       {singleCat.map((singleCat) => {

@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
-const GetallCarts = () => {
+const GetAllCarts = () => {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
@@ -31,4 +31,4 @@ const GetallCarts = () => {
   );
 };
 
-export default GetallCarts;
+export default GetAllCarts;
