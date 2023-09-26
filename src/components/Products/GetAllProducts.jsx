@@ -1,10 +1,12 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Cartcontext } from "../../context/context";
 
 const Products = () => {
   const [product, setProduct] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc");
+
   const navigate = useNavigate();
 
   // console.log(product);
@@ -38,6 +40,10 @@ const Products = () => {
     navigate(`/products/${id}`);
   }
 
+  const Globalstate = useContext(Cartcontext);
+  const dispatch = Globalstate.dispatch;
+  console.log(Globalstate);
+
   return (
     <div>
       <div>
@@ -47,17 +53,21 @@ const Products = () => {
       <button onClick={handleSortOrder}>Sort Order</button>
       <div className="product-display">
         {product.map((product) => (
-          <div className="card" key={product.id}>
+          <div className="card1" key={product.id}>
             <img src={product.image} width={"100"} height={"200"}></img>
             <div>
               <h6>{product.title}</h6>
               <h6>{`Price: $${product.price}`}</h6>
               <h5>{`Category: ${product.category}`}</h5>
+              <h5>{product.categories}</h5>
 
               <button onClick={() => handleButtonClick(product.id)}>
                 Details
               </button>
-              <button onClick={() => handleButtonClick(product.id)}>
+
+              <button
+                onClick={() => dispatch({ type: "ADD", payload: product })}
+              >
                 Add To Cart
               </button>
             </div>

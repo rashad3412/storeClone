@@ -4,13 +4,15 @@ import Products from "./products/GetAllProducts";
 import "./products/GetAllProducts.css";
 import NavBar from "./navbar/NavBar.jsx";
 import "./navbar/NavBar.css";
-import Home from "./home/Home";
+
 import Cart from "./cart/Cart";
+import "./cart/Cart.css";
 import SingleProduct from "./products/SingleProduct";
 import SingleCategory from "./Products/SingleCategory";
 import { Route, Routes } from "react-router-dom";
 import AccountForm from "./login/AccountForm";
 import "./login/AccountForm.css";
+import Home from "./home/Home";
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token") || null);
@@ -31,7 +33,10 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route
+              path="/cart"
+              element={<Cart token={token} setToken={setToken} />}
+            />
             <Route
               path="/login"
               element={<AccountForm token={token} setToken={setToken} />}

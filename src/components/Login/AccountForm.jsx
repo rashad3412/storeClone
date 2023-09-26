@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 const AccountForm = ({ token, setToken }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -20,7 +19,9 @@ const AccountForm = ({ token, setToken }) => {
     console.log("data", data);
     setToken(data.token);
     if (data.token) {
-      navigate("/profile");
+      navigate("/");
+    } else {
+      return "Trouble signing in";
     }
   };
 
@@ -46,7 +47,7 @@ const AccountForm = ({ token, setToken }) => {
               required
             />
             <div className="center-button">
-              <small> this is error placeholder</small>
+              <small> </small>
               <button className="format-button">Login</button>
             </div>
           </div>

@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Cartcontext } from "../../context/context";
 const GetAllCarts = () => {
   const [cart, setCart] = useState([]);
 
@@ -17,17 +18,41 @@ const GetAllCarts = () => {
     };
     cartContainer();
   }, []);
+  const Globalstate = useContext(Cartcontext);
+  const state = Globalstate.state;
+  console.log("state", state);
+  const dispatch = Globalstate.dispatch;
 
   return (
-    <>
-      <div>
-        <div key={cart.id}>
-          {cart.map((cart) => {
-            cart.userId;
-          })}
-        </div>
-      </div>
-    </>
+    <div className="cart">
+      {state.map((cart, item) => {
+        console.log("cart", cart);
+        return (
+          <div className="card" key={item}>
+            <img src={cart.image} alt="" />
+
+            <p>${cart.quantity * cart.price + 1}</p>
+            <div className="quantity">
+              <button
+                onClick={() => dispatch({ type: "INCREASE", payload: cart })}
+              >
+                {" "}
+                +
+              </button>
+              <p>{cart.quantity}</p>
+              <button
+                onClick={() => dispatch({ type: "DECREASE", payload: cart })}
+              >
+                -
+              </button>
+            </div>
+            <h3 onClick={() => dispatch({ type: "REMOVE", payload: cart })}>
+              x
+            </h3>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 

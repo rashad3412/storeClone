@@ -1,25 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import GetallCategories from "../products/GetAllCategories";
-// import Products from "../products/GetAllProducts";
 
 const Home = () => {
   return (
-    <>
+    <header>
+      <h1>WELCOME TO OUR SHOP</h1>
       <div>
-        <GetallCategories />
-        {/* <Products /> */}
+        <img src=""></img>
       </div>
-    </>
+    </header>
   );
 };
 
 export default Home;
-
-// @media (max-width: 768px) {
-//   .card {
-//     width: calc(50% - 10px);
-//   }
-// }
-
-/* width: calc(33.33% - 10px); */
