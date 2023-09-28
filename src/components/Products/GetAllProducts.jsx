@@ -63,14 +63,18 @@ const Products = () => {
   return (
     <div>
       <div className="search">
-        <button className="btn2" onClick={handleSortOrder}>
-          Sort Order
-        </button>
         {categories.map((category, i) => (
-          <button key={i} onClick={() => handleSearchClick(category)}>
+          <button
+            className="btn2"
+            key={i}
+            onClick={() => handleSearchClick(category)}
+          >
             {category}
           </button>
         ))}
+        <button className="btn2" onClick={handleSortOrder}>
+          Sort Order
+        </button>
       </div>
 
       <div className="product-display">

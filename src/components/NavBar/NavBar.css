@@ -43,3 +43,11 @@ body {
 .nav li.active {
   background-color: #555;
 }
+
+.btn4 {
+  margin: 2px;
+  border-radius: 1.5;
+  background-color: white;
+  color: #75a2dc;
+  cursor: pointer;
+}

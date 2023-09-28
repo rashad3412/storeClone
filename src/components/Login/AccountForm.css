@@ -27,12 +27,13 @@ input {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: black;
+  background-color: #75a2dc;
   color: white;
 }
 
 h1 {
   text-align: center;
+  color: #75a2dc;
 }
 
 .center-button {

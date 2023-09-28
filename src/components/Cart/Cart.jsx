@@ -49,9 +49,12 @@ const GetAllCarts = () => {
                 -
               </button>
             </div>
-            <h3 onClick={() => dispatch({ type: "REMOVE", payload: cart })}>
+            <button
+              className="btn2"
+              onClick={() => dispatch({ type: "REMOVE", payload: cart })}
+            >
               x
-            </h3>
+            </button>
           </div>
         );
       })}

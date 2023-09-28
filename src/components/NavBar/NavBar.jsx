@@ -38,11 +38,15 @@ const NavBar = ({ token, setToken }) => {
               <ShoppingCart size={32} />
               <span>{getCart()}</span>
             </Link>
-            <button onClick={logout}>logout</button>
+            <button className="btn4" onClick={logout}>
+              logout
+            </button>
           </>
         ) : (
           <li>
-            <Link to="/login">Login</Link>
+            <Link className="btn2" to="/login">
+              Login
+            </Link>
           </li>
         )}
       </ul>

@@ -15,8 +15,8 @@ const Home = () => {
       <div className="img">
         <img
           src="https://media.sproutsocial.com/uploads/2021/11/21_Ecommerce-Trends.svg"
-          width={"500px"}
-          height={"300px"}
+          width={"800px"}
+          height={"600px"}
         ></img>
       </div>
       <div className="btn">
