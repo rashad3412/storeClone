@@ -20,7 +20,7 @@ const GetAllCarts = () => {
   }, []);
   const Globalstate = useContext(Cartcontext);
   const state = Globalstate.state;
-  console.log("state", state);
+
   const dispatch = Globalstate.dispatch;
 
   return (
@@ -29,11 +29,13 @@ const GetAllCarts = () => {
         console.log("cart", cart);
         return (
           <div className="card" key={item}>
-            <img src={cart.image} alt="" />
+            <img src={cart.image} alt="" {...(cart.quantity + 1)} />
 
             <p>${cart.quantity * cart.price + 1}</p>
+            <p>{cart.title}</p>
             <div className="quantity">
               <button
+                className="btn2"
                 onClick={() => dispatch({ type: "INCREASE", payload: cart })}
               >
                 {" "}
@@ -41,6 +43,7 @@ const GetAllCarts = () => {
               </button>
               <p>{cart.quantity}</p>
               <button
+                className="btn2"
                 onClick={() => dispatch({ type: "DECREASE", payload: cart })}
               >
                 -

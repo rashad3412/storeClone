@@ -19,7 +19,7 @@ const AccountForm = ({ token, setToken }) => {
     console.log("data", data);
     setToken(data.token);
     if (data.token) {
-      navigate("/");
+      navigate("/products");
     } else {
       return "Trouble signing in";
     }

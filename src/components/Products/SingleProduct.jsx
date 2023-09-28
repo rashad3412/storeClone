@@ -21,7 +21,7 @@ const SingleProduct = () => {
     productContainer();
   }, [params.id]);
   return (
-    <div>
+    <div className="single-product">
       <h3>{singleProduct?.title}</h3>
       <img src={singleProduct?.image} width={"100"} height={"200"}></img>
       <p>{singleProduct?.description}</p>

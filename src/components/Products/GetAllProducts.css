@@ -10,6 +10,8 @@
   margin: 10px;
   padding: 15px;
   text-align: center;
+  border: solid #75a2dc;
+  background-color: white;
 }
 
 .description {
@@ -22,4 +24,23 @@
   .card {
     width: 50%;
   }
+}
+
+.btn2 {
+  margin: 2px;
+  border-radius: 1.5;
+  background-color: #75a2dc;
+  color: white;
+}
+
+.single-product {
+  margin: 5px;
+  padding: 4px;
+  border: solid #75a2dc;
+  border-radius: 0.2;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
 }

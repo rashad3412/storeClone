@@ -4,7 +4,7 @@ import Products from "./products/GetAllProducts";
 import "./products/GetAllProducts.css";
 import NavBar from "./navbar/NavBar.jsx";
 import "./navbar/NavBar.css";
-
+import "./home/home.css";
 import Cart from "./cart/Cart";
 import "./cart/Cart.css";
 import SingleProduct from "./products/SingleProduct";

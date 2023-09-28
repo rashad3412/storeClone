@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Cartcontext } from "../../context/context";
 
 const Products = () => {
-  const [product, setProduct] = useState([]);
+  const [products, setProduct] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc");
 
   const navigate = useNavigate();
@@ -25,6 +25,15 @@ const Products = () => {
     getAllProducts();
   }, []);
 
+  const handleSearchClick = async (category) => {
+    const response = await fetch("https://fakestoreapi.com/products");
+    const result = await response.json();
+    const newProducts = result.filter((product) => {
+      return product.category.match(category);
+    });
+    setProduct(newProducts);
+  };
+
   // HandleClick function to sort products in ascending or descending order
   const handleSortOrder = async () => {
     const newSortOrder = sortOrder === "asc" ? "desc" : "asc";
@@ -44,29 +53,46 @@ const Products = () => {
   const dispatch = Globalstate.dispatch;
   console.log(Globalstate);
 
+  const categories = [
+    "men's clothing",
+    "jewelery",
+    "women's clothing",
+    "electronics",
+  ];
+
   return (
     <div>
-      <div>
-        <h1>Product Page</h1>
+      <div className="search">
+        <button className="btn2" onClick={handleSortOrder}>
+          Sort Order
+        </button>
+        {categories.map((category, i) => (
+          <button key={i} onClick={() => handleSearchClick(category)}>
+            {category}
+          </button>
+        ))}
       </div>
 
-      <button onClick={handleSortOrder}>Sort Order</button>
       <div className="product-display">
-        {product.map((product) => (
-          <div className="card1" key={product.id}>
-            <img src={product.image} width={"100"} height={"200"}></img>
+        {products.map((products) => (
+          <div className="card1" key={products.id}>
+            <img src={products.image} width={"100"} height={"200"}></img>
             <div>
-              <h6>{product.title}</h6>
-              <h6>{`Price: $${product.price}`}</h6>
-              <h5>{`Category: ${product.category}`}</h5>
-              <h5>{product.categories}</h5>
+              <h6>{products.title}</h6>
+              <h6>{`Price: $${products.price}`}</h6>
+              <h5>{`Category: ${products.category}`}</h5>
+              <h5>{products.categories}</h5>
 
-              <button onClick={() => handleButtonClick(product.id)}>
+              <button
+                className="btn2"
+                onClick={() => handleButtonClick(products.id)}
+              >
                 Details
               </button>
 
               <button
-                onClick={() => dispatch({ type: "ADD", payload: product })}
+                className="btn2"
+                onClick={() => dispatch({ type: "ADD", payload: products })}
               >
                 Add To Cart
               </button>

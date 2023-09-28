@@ -1,19 +1,31 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext } from "react";
 import { ShoppingCart } from "phosphor-react";
 import { Link, useNavigate } from "react-router-dom";
+import { Cartcontext } from "../../context/context";
 
 const NavBar = ({ token, setToken }) => {
+  const Globalstate = useContext(Cartcontext);
+  const state = Globalstate.state;
+
   const navigaite = useNavigate();
   const logout = () => {
     setToken(null);
     navigaite("/login");
     console.log("Successfully Logged Out");
   };
+
+  const getCart = () => {
+    let sum = 0;
+    console.log("state", state);
+    state?.forEach((item) => (sum += item.quantity));
+    return sum;
+  };
+
   return (
     <nav className="nav">
       <Link to="/" className="site-title">
-        Store Clone
+        Capstone Project
       </Link>
       <ul>
         <li>
@@ -24,6 +36,7 @@ const NavBar = ({ token, setToken }) => {
           <>
             <Link to="/cart">
               <ShoppingCart size={32} />
+              <span>{getCart()}</span>
             </Link>
             <button onClick={logout}>logout</button>
           </>
