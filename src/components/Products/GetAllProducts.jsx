@@ -53,6 +53,7 @@ const Products = () => {
   const dispatch = Globalstate.dispatch;
   console.log(Globalstate);
 
+  //Categories
   const categories = [
     "men's clothing",
     "jewelery",
